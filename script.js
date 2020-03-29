@@ -22,7 +22,19 @@ function addName() {
     var weapon = new Weapon(name, type, cost, dam);
     WEAPONS.push(weapon);
     console.log(WEAPONS);
-    wepList.innerHTML = WEAPONS.join(" ");
+    createList();
+};
+// This function successfully writes a list item to the unordered 
+// list that I created on the index.html file
+// it adds all of the items every time, which I anticipated
+//but first things first and we are on our way!
+function createList() {
+    let listItems = document.querySelector(".wep-list-items");
+    let entry = document.createElement('li');
+    for (i = 0; i < WEAPONS.length; i++) {
+        entry.appendChild(document.createTextNode(WEAPONS[i].name));
+        listItems.appendChild(entry);
+    };
 };
 // this is showing up in browser as [object, Object]
 // I think I need to write a separate function that takes 
