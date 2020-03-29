@@ -31,10 +31,14 @@ function addName() {
 function createList() {
     let listItems = document.querySelector(".wep-list-items");
     let entry = document.createElement('li');
-    for (i = 0; i < WEAPONS.length; i++) {
-        entry.appendChild(document.createTextNode(WEAPONS[i].name));
+        entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].name + " "));
         listItems.appendChild(entry);
-    };
+        entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].type + " "));
+        listItems.appendChild(entry);
+    entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].cost + " "));
+        listItems.appendChild(entry);
+        entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].damage));
+        listItems.appendChild(entry);
 };
 // this is showing up in browser as [object, Object]
 // I think I need to write a separate function that takes 
