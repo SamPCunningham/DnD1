@@ -24,6 +24,9 @@ function addName() {
     console.log(WEAPONS);
     createList();
 };
+// I fixed this issue but leaving notes so that I know that 
+// I did write a successful for loop for writing this 
+// but it was inappropriate for usage here.
 // This function successfully writes a list item to the unordered 
 // list that I created on the index.html file
 // it adds all of the items every time, which I anticipated
@@ -40,6 +43,7 @@ function createList() {
         entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].damage));
         listItems.appendChild(entry);
 };
+// This was fixed by writing the createList function!
 // this is showing up in browser as [object, Object]
 // I think I need to write a separate function that takes 
 // the properties of my object and passes them back to html as string
