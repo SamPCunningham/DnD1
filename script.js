@@ -20,7 +20,8 @@ function addName() {
     var dam = document.getElementById("wep-damage").value;
 
     var weapon = new Weapon(name, type, cost, dam);
-    WEAPONS.push(weapon.toString());
+    WEAPONS.push(weapon);
+    console.log(WEAPONS);
     wepList.innerHTML = WEAPONS.join(" ");
 };
 // this is showing up in browser as [object, Object]
