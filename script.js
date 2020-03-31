@@ -31,17 +31,32 @@ function addName() {
 // list that I created on the index.html file
 // it adds all of the items every time, which I anticipated
 //but first things first and we are on our way!
+var listId =0; //used by create list to track new list items.
 function createList() {
+    listId++;
     let listItems = document.querySelector(".wep-list-items");
     let entry = document.createElement('li');
-        entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].name + " "));
+    let radInput = document.createElement("input");
+    radInput.setAttribute("type", "checkbox");
+    radInput.setAttribute("class", "wepListAll");
+    radInput.setAttribute("list-id", listId);
+    radInput.setAttribute("onclick","removeItem();");
+        entry.appendChild(document.createTextNode("Name " + WEAPONS[WEAPONS.length - 1].name + " "));
         listItems.appendChild(entry);
-        entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].type + " "));
+    entry.appendChild(document.createTextNode("Type " + WEAPONS[WEAPONS.length - 1].type + " "));
         listItems.appendChild(entry);
-    entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].cost + " "));
+    entry.appendChild(document.createTextNode("Cost in Gold " + WEAPONS[WEAPONS.length - 1].cost + " "));
         listItems.appendChild(entry);
-        entry.appendChild(document.createTextNode(WEAPONS[WEAPONS.length - 1].damage));
+    entry.appendChild(document.createTextNode("Damage Die " + WEAPONS[WEAPONS.length - 1].damage));
         listItems.appendChild(entry);
+    listItems.appendChild(radInput);
+    console.log(listItems);
+};
+
+function removeItem() {
+    let thisItem = document.querySelectorAll(".list-id");
+    
+    thisItem.parentNode.removeChild(thisItem);
 };
 // This was fixed by writing the createList function!
 // this is showing up in browser as [object, Object]
@@ -49,6 +64,7 @@ function createList() {
 // the properties of my object and passes them back to html as string
 // I'm thinking a for loop of the array that will create a string 
 // of text using my object and return each part of the oject's name.
+
 
 
 enterWep.addEventListener("click", addName);

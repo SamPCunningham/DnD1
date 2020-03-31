@@ -1,4 +1,17 @@
 h1 {
-    color: red;
+    color: rgb(241, 188, 89);
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.suck {
+    font-size: 8pt;
+}
+
+label {
+    font-size: 30pt;
+    font-weight: 500;
+}
+
+body {
+    background-color: aqua;
 }
